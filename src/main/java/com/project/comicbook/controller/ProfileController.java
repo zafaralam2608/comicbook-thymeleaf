@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,8 @@ public class ProfileController {
 
     private final ProfileService profileService;
 
-    @GetMapping
+    @GetMapping("/home")
+    @ModelAttribute("profiles")
     public List<ProfileDto> getAll(){
         return profileService.getAll();
     }

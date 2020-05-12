@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
 </head>
 <body>
-
+<table>
+    <caption></caption>
+    <thead>
+        <tr>
+            <th id="name">Name</th>
+            <th id="alias">Alias</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="profile : ${profiles}">
+            <td><span th:text="${profile.name}"></span></td>
+            <td><span th:text="${profile.alias}"></span></td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>

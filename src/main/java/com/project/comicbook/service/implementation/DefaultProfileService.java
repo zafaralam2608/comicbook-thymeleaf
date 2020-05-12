@@ -9,10 +9,12 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 
+@Service
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class DefaultProfileService implements ProfileService {
 
