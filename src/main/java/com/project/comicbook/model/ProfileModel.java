@@ -8,6 +8,10 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "PROFILE")
@@ -26,4 +30,11 @@ public class ProfileModel {
     @Column(name = "ALIAS")
     private String alias = "";
 
+    @CreationTimestamp
+    @Column(name = "CREATED")
+    private Date created;
+
+    @UpdateTimestamp
+    @Column(name = "UPDATED")
+    private Date updated;
 }
