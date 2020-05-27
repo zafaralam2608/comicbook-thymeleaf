@@ -1,10 +1,6 @@
 package com.project.comicbook.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
@@ -29,6 +25,10 @@ public class ProfileModel {
 
     @Column(name = "ALIAS")
     private String alias = "";
+
+    @Lob
+    @Column(name = "PICTURE")
+    private byte[] picture;
 
     @CreationTimestamp
     @Column(name = "CREATED")

@@ -28,6 +28,12 @@ public class DefaultProfileService implements ProfileService {
         return convertModelToDtoMultiple(profiles);
     }
 
+    @Override
+    public byte[] getImage(Long id) {
+        ProfileModel profile = profileRepository.getOne(id);
+        return profile.getPicture();
+    }
+
     private ProfileDto convertModelToDto(ProfileModel profileModel) {
         return modelMapper.map(profileModel,ProfileDto.class);
     }

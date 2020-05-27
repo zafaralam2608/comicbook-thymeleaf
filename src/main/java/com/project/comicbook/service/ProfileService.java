@@ -7,4 +7,6 @@ import java.util.List;
 public interface ProfileService {
 
     List<ProfileDto> getAll();
+
+    byte[] getImage(Long id);
 }

@@ -9,17 +9,15 @@
 <h1>Welcome to Comic Book</h1>
 <table>
     <caption></caption>
-    <thead>
-        <tr>
-            <th id="name">Name</th>
-            <th id="alias">Alias</th>
-        </tr>
-    </thead>
     <tbody>
-        <tr th:each="profile : ${profiles}">
-            <td><span th:text="${profile.name}"></span></td>
-            <td><span th:text="${profile.alias}"></span></td>
-        </tr>
+        <th:block th:each="profile : ${profiles}">
+            <tr>
+                <td><img height="100" width="100" th:src="@{'/image/' + ${profile.id}}"></td>
+            </tr>
+            <tr>
+                <td><h2 th:text="${profile.name}"></h2></td>
+            </tr>
+        </th:block>
     </tbody>
 </table>
 </body>
