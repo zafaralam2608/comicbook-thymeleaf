@@ -1,2 +1,2 @@
 # comicbook
-Simple UI with CRUD operations for comic book characters
+Simple User Interface with CRUD operations for comic book characters

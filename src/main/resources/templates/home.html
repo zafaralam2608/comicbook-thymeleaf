@@ -6,19 +6,21 @@
     <link th:href="@{/styles/main.css}" rel="stylesheet"/>
 </head>
 <body>
-<h1>Welcome to Comic Book</h1>
-<table>
-    <caption></caption>
-    <tbody>
-        <th:block th:each="profile : ${profiles}">
-            <tr>
-                <td><img height="100" width="100" th:src="@{'/image/' + ${profile.id}}"></td>
-            </tr>
-            <tr>
-                <td><h2 th:text="${profile.name}"></h2></td>
-            </tr>
-        </th:block>
-    </tbody>
-</table>
+<div id="page">
+    <div id="header">
+        Welcome to Comic Book
+    </div>
+    <div id="content">
+        <tr th:each="profile : ${profiles}">
+            <div class="thumbnail">
+                <img class="photo" th:src="@{'/image/' + ${profile.id}}"/>
+                <div class="caption" th:text="${profile.name}"/>
+            </div>
+        </tr>
+    </div>
+    <div id="pagination">
+        Reserved for pagination
+    </div>
+</div>
 </body>
 </html>
