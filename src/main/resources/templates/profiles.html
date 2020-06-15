@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home Page</title>
+    <link th:href="@{/styles/main.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="canvas">
+    <div class="header">
+        Welcome to Comic Book
+    </div>
+    <div class="album">
+        <tr th:each="callsign : ${callsigns.content}">
+            <div class="thumbnail">
+                <img class="photo" th:src="@{'/image/' + ${callsign}}"/>
+                <div class="caption" th:text="${callsign}"/>
+            </div>
+        </tr>
+        <div class="thumbnail">Enter add button</div>
+    </div>
+    <div class="pagination" th:if="${callsigns.totalPages > 0}">
+        <tr th:each="pageNumber : ${pages}">
+            <a th:href="@{profiles(page=${pageNumber})}" th:text="${pageNumber}" th:class="${pageNumber == callsigns.number + 1} ? active"></a>
+        </tr>
+    </div>
+</div>
+</body>
+</html>

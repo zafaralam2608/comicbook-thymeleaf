@@ -17,8 +17,8 @@ public class ProfileImageController {
 
     private final ProfileService profileService;
 
-    @GetMapping(value = "/image/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
-    public @ResponseBody byte[] getImage(@PathVariable Long id){
-        return profileService.getImage(id);
+    @GetMapping(value = "/image/{callsign}", produces = MediaType.IMAGE_JPEG_VALUE)
+    public @ResponseBody byte[] getImage(@PathVariable String callsign){
+        return profileService.getImageByCallsign(callsign);
     }
 }

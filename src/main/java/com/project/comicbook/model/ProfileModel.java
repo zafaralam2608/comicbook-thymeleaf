@@ -22,6 +22,9 @@ public class ProfileModel {
     @GeneratedValue
     private Long id;
 
+    @Column(name = "CALLSIGN")
+    private String callsign;
+    
     @Column(name = "NAME")
     private String name;
 
