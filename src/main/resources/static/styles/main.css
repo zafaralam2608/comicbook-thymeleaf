@@ -7,7 +7,7 @@ html,body
 .pagination
 {height: 30px; width: 1200px; font-size: 20px; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; align-items: center;}
 .pagination a
-{color:orange; float: left;padding: 5px;}
+{color: white; padding: 5px;}
 .pagination a.active
 {color: red;}
 .album

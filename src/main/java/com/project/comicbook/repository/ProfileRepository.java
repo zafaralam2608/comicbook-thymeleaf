@@ -13,8 +13,8 @@ import java.util.List;
 public interface ProfileRepository extends JpaRepository<ProfileModel, Long> {
 
     @Query("SELECT callsign FROM ProfileModel ORDER BY id")
-    public List<String> getAllCallsigns();
+    List<String> getAllCallsigns();
 
     @Query("SELECT picture FROM ProfileModel WHERE callsign = :callsign")
-    public byte[] getImageByCallsign(@Param("callsign") String callsign);
+    byte[] getImageByCallsign(@Param("callsign") String callsign);
 }

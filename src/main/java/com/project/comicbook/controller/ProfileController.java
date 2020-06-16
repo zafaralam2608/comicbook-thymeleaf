@@ -1,6 +1,5 @@
 package com.project.comicbook.controller;
 
-import com.project.comicbook.dto.ProfileDto;
 import com.project.comicbook.service.ProfileService;
 
 import java.util.List;
@@ -21,8 +20,6 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class ProfileController {
-
-    public static final int DEF_PAGE_SIZE = 15;
 
     private final ProfileService profileService;
 
