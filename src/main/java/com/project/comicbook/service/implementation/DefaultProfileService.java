@@ -54,6 +54,12 @@ public class DefaultProfileService implements ProfileService {
         return profileRepository.getImageByCallsign(callsign);
     }
 
+    @Override
+    public ProfileDto getProfile(String callsign) {
+        ProfileModel profile = profileRepository.findByCallsign(callsign);
+        return convertModelToDto(profile);
+    }
+
     private ProfileDto convertModelToDto(ProfileModel profileModel) {
         return modelMapper.map(profileModel,ProfileDto.class);
     }

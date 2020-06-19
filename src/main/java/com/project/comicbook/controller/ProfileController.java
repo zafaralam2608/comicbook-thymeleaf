@@ -1,5 +1,6 @@
 package com.project.comicbook.controller;
 
+import com.project.comicbook.dto.ProfileDto;
 import com.project.comicbook.service.ProfileService;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,5 +37,10 @@ public class ProfileController {
             model.addAttribute("pages",pages);
         }
         return model;
+    }
+
+    @GetMapping("/profile/{callsign}")
+    public ProfileDto getProfile(@PathVariable String callsign){
+        return profileService.getProfile(callsign);
     }
 }

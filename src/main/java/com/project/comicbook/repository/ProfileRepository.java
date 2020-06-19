@@ -17,4 +17,6 @@ public interface ProfileRepository extends JpaRepository<ProfileModel, Long> {
 
     @Query("SELECT picture FROM ProfileModel WHERE callsign = :callsign")
     byte[] getImageByCallsign(@Param("callsign") String callsign);
+
+    ProfileModel findByCallsign(String callsign);
 }

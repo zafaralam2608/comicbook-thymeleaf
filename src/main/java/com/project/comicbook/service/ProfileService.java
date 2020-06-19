@@ -1,9 +1,10 @@
 package com.project.comicbook.service;
 
 import com.project.comicbook.dto.ProfileDto;
-import org.springframework.data.domain.Page;
 
 import java.util.List;
+
+import org.springframework.data.domain.Page;
 
 public interface ProfileService {
 
@@ -12,4 +13,6 @@ public interface ProfileService {
     Page<String> getPaginated(int currentPage);
 
     byte[] getImageByCallsign(String callsign);
+
+    ProfileDto getProfile(String callsign);
 }

@@ -14,7 +14,7 @@
         <tr th:each="callsign : ${callsigns.content}">
             <div class="thumbnail">
                 <img class="photo" th:src="@{'/image/' + ${callsign}}"/>
-                <div class="caption" th:text="${callsign}"/>
+                <a class="caption" th:text="${callsign}" th:href="@{'/profile/' + ${callsign}}"/>
             </div>
         </tr>
         <div class="thumbnail">Enter add button</div>
