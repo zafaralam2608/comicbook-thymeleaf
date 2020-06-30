@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class ProfileDto {
 
-    private Long id;
+    private String callsign;
 
     private String name;
 

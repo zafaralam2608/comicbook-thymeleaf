@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import lombok.RequiredArgsConstructor;
 
@@ -40,7 +41,10 @@ public class ProfileController {
     }
 
     @GetMapping("/profile/{callsign}")
-    public ProfileDto getProfile(@PathVariable String callsign){
-        return profileService.getProfile(callsign);
+    public ModelAndView getProfile(@PathVariable String callsign){
+        ProfileDto dto = profileService.getProfile(callsign);
+        ModelAndView mav =  new ModelAndView("profile");
+        mav.addObject("object",dto);
+        return mav;
     }
 }

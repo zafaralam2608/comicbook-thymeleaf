@@ -7,16 +7,14 @@
 </head>
 <body>
 <div class="canvas">
-    <div class="header">
-        name
-    </div>
+    <div class="header" th:text="${object.name}"/>
     <div class="content">
         <div class="left-panel">
-            <img class="photo" th:src="">
+            <img class="photo" th:src="@{'../image/' + ${object.callsign}}">
             <div class="alias"/>
             <div>
-                <span class="label"></span>
-                <span class="value"></span>
+                <span class="label">Alias </span>
+                <span class="value"th:text="${object.alias}" />
             </div>
             <div>
                 <span class="label"></span>
