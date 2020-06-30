@@ -1,8 +1,14 @@
 html,body
 {max-height: 600px; max-width: 1200px; margin: auto;}
-.canvas
-{height: 600px; width: 1200px; background-color:black; color: white; display: flex; flex-direction: column; flex-wrap: wrap;}
-.header
+#canvas
+{height: 600px; width: 1200px; background-color:black; color: white; display: flex; flex-direction: column; flex-wrap: nowrap;}
+#header
 {height: 70px; width: 1200px; font-size: 45px; vertical-align: top; text-align: center;}
-.content
-{height: 490px; width: 1190px; padding: 5px; display: flex; flex-direction: row; flex-wrap: wrap;}
+#content
+{height: 490px; width: 1190px; padding: 5px; display: flex; flex-direction: row; flex-wrap: nowrap;}
+#left-panel
+{height: 490px; width: 300px; }
+#right-panel
+{height: 490px; width: 890px; }
+#photo
+{height: 300px; width: 240px; background-color:white;}

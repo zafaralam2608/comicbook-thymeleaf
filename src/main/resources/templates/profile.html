@@ -6,22 +6,31 @@
     <link th:href="@{/styles/profile.css}" rel="stylesheet"/>
 </head>
 <body>
-<div class="canvas">
-    <div class="header" th:text="${object.name}"/>
-    <div class="content">
-        <div class="left-panel">
-            <img class="photo" th:src="@{'../image/' + ${object.callsign}}">
-            <div class="alias"/>
-            <div>
-                <span class="label">Alias </span>
-                <span class="value"th:text="${object.alias}" />
-            </div>
-            <div>
-                <span class="label"></span>
-                <span class="value"></span>
-            </div>
+<div id="canvas">
+    <div id="header" th:text="${object.name}"/>
+    <div id="content">
+        <div id="left-panel">
+            <img id="photo" th:src="@{'../image/' + ${object.callsign}}">
+            <table>
+                <tr>
+                    <th>Alias</th>
+                    <td th:text="${object.alias}"></td>
+                </tr>
+                <tr>
+                    <th>Debut in</th>
+                    <td th:text="${object.alias}"></td>
+                </tr>
+                <tr>
+                    <th>Debut on</th>
+                    <td th:text="${object.alias}"></td>
+                </tr>
+                <tr>
+                    <th>Home</th>
+                    <td th:text="${object.alias}"></td>
+                </tr>
+            </table>
         </div>
-        <div class="right-panel">
+        <div id="right-panel">
 
         </div>
     </div>
