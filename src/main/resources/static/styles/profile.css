@@ -4,11 +4,21 @@ html,body
 {height: 600px; width: 1200px; background-color:black; color: white; display: flex; flex-direction: column; flex-wrap: nowrap;}
 #header
 {height: 70px; width: 1200px; font-size: 45px; vertical-align: top; text-align: center;}
+#footer
+{height: 30px; width: 1200px; font-size: 20px; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; align-items: center;}
 #content
-{height: 490px; width: 1190px; padding: 5px; display: flex; flex-direction: row; flex-wrap: nowrap;}
+{height: 490px; width: 1190px; padding: 5px; display: flex; flex-direction: row; flex-wrap: nowrap; font-size: 20px;}
 #left-panel
-{height: 490px; width: 300px; }
+{height: 480px; width: 290px; padding: 5px; text-align: left;}
 #right-panel
-{height: 490px; width: 890px; }
+{height: 480px; width: 890px; padding: 5px;}
+#abilities-panel
+{height: 180px; width: 880px; padding: 5px;}
+#bio-panel
+{height: 290px; width: 880px; padding: 5px;}
+.panel-head
+{height: 35px; width: 880px; font-size: 30px;}
+.panel-body
+{height: 100%; width: 880px; font-size: 20px;}
 #photo
 {height: 300px; width: 240px; background-color:white;}
