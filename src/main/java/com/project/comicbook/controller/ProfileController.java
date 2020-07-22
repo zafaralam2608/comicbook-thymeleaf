@@ -31,7 +31,7 @@ public class ProfileController {
     public Model getAll(Model model, @RequestParam("page") Optional<Integer> page){
         int currentPage = page.orElse(1);
         Page<String> callsigns = profileService.getPaginated(currentPage - 1);
-        model.addAttribute("callsigns",callsigns);
+        model.addAttribute("objects",callsigns);
         int totalPages = callsigns.getTotalPages();
         if(totalPages > 0){
             List<Integer> pages = IntStream.rangeClosed(1, totalPages).boxed().collect(Collectors.toList());

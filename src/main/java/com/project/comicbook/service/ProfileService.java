@@ -12,7 +12,5 @@ public interface ProfileService {
 
     Page<String> getPaginated(int currentPage);
 
-    byte[] getImageByCallsign(String callsign);
-
     ProfileDto getProfile(String callsign);
 }

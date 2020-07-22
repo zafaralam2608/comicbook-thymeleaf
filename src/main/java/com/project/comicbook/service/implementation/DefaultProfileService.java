@@ -50,11 +50,6 @@ public class DefaultProfileService implements ProfileService {
     }
 
     @Override
-    public byte[] getImageByCallsign(String callsign) {
-        return profileRepository.getImageByCallsign(callsign);
-    }
-
-    @Override
     public ProfileDto getProfile(String callsign) {
         ProfileModel profile = profileRepository.findByCallsign(callsign);
         return convertModelToDto(profile);

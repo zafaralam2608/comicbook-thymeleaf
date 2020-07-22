@@ -11,17 +11,17 @@
         Welcome to Comic Book
     </div>
     <div class="album">
-        <tr th:each="callsign : ${callsigns.content}">
+        <tr th:each="object : ${objects.content}">
             <div class="thumbnail">
-                <img class="photo" th:src="@{'/image/' + ${callsign}}"/>
-                <a class="caption" th:text="${callsign}" th:href="@{'/profile/' + ${callsign}}"/>
+                <img class="photo" th:src="@{'/image/' + ${object}}"/>
+                <a class="caption" th:text="${object}" th:href="@{'/profile/' + ${object}}"/>
             </div>
         </tr>
         <div class="thumbnail">Enter add button</div>
     </div>
-    <div class="pagination" th:if="${callsigns.totalPages > 0}">
+    <div class="pagination" th:if="${objects.totalPages > 0}">
         <tr th:each="pageNumber : ${pages}">
-            <a th:href="@{profiles(page=${pageNumber})}" th:text="${pageNumber}" th:class="${pageNumber == callsigns.number + 1} ? active"></a>
+            <a th:href="@{profiles(page=${pageNumber})}" th:text="${pageNumber}" th:class="${pageNumber == objects.number + 1} ? active"></a>
         </tr>
     </div>
 </div>

@@ -1,6 +1,6 @@
 package com.project.comicbook.controller;
 
-import com.project.comicbook.service.ProfileService;
+import com.project.comicbook.service.PictureService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -13,12 +13,12 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
-public class ProfileImageController {
+public class PictureController {
 
-    private final ProfileService profileService;
+    private final PictureService pictureService;
 
     @GetMapping(value = "/image/{callsign}", produces = MediaType.IMAGE_JPEG_VALUE)
     public @ResponseBody byte[] getImage(@PathVariable String callsign){
-        return profileService.getImageByCallsign(callsign);
+        return pictureService.getImageByCallsign(callsign);
     }
 }

@@ -13,9 +13,9 @@ html,body
 #right-panel
 {height: 480px; width: 890px; padding: 5px;}
 #abilities-panel
-{height: 180px; width: 880px; padding: 5px;}
+{height: 150px; width: 880px; padding: 5px;}
 #bio-panel
-{height: 290px; width: 880px; padding: 5px;}
+{height: 310px; width: 880px; padding: 5px;}
 .panel-head
 {height: 35px; width: 880px; font-size: 30px;}
 .panel-body
