@@ -1,0 +1,20 @@
+html,body
+{max-height: 600px; max-width: 1200px; margin: auto;}
+.canvas
+{height: 600px; width: 1200px; background-color:black; color: white; display: flex; flex-direction: column; flex-wrap: wrap;}
+.header
+{height: 70px; width: 1200px; font-size: 45px; vertical-align: top; text-align: center;}
+.pagination
+{height: 30px; width: 1200px; font-size: 20px; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; align-items: center;}
+.pagination a
+{color: white; padding: 5px;}
+.pagination a.active
+{color: red;}
+.album
+{height: 490px; width: 1190px; padding: 5px; display: flex; flex-direction: row; flex-wrap: wrap;}
+.thumbnail
+{height: 240px; width: 170px; border-width: 5px; display: flex; flex-direction: column; flex-wrap: nowrap; justify-content: center; align-items: center;}
+.photo
+{height: 200px; width: 160px; background-color:white;}
+.caption
+{height: 30px; width: 150px; padding:5px; font-size: 16px; text-align: center;}

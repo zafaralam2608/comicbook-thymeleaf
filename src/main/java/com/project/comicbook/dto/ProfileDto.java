@@ -1,11 +1,13 @@
 package com.project.comicbook.dto;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class ProfileDto {
 
-    private Long id;
+    private String callsign;
 
     private String name;
 

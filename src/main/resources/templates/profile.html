@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link th:href="@{/styles/profile.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="canvas">
+    <div id="header" th:text="${object.name}"/>
+    <div id="content">
+        <div id="left-panel">
+            <img id="photo" th:src="@{'../image/' + ${object.callsign}}">
+            <table>
+                <tr>
+                    <th>Alias</th>
+                    <td th:text="${object.alias}"></td>
+                </tr>
+                <tr>
+                    <th>Base</th>
+                    <td th:text="${object.alias}"></td>
+                </tr>
+                <tr>
+                    <th>Debut in</th>
+                    <td th:text="${object.alias}"></td>
+                </tr>
+                <tr>
+                    <th>Debut on</th>
+                    <td th:text="${object.alias}"></td>
+                </tr>
+                <tr>
+                    <th>Universe</th>
+                    <td th:text="${object.alias}"></td>
+                </tr>
+                <tr>
+                    <th>Official</th>
+                    <td th:text="${object.alias}"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="right-panel">
+            <div id="abilities-panel">
+                <div class="panel-head">Abilities</div>
+                <div class="panel-body">abilities content</div>
+            </div>
+            <div id="bio-panel">
+                <div class="panel-head">Bio</div>
+                <div class="panel-body">bio content</div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">To Do : Links</div>
+</div>
+</body>
+</html>
