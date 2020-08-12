@@ -13,4 +13,6 @@ public interface ProfileService {
     Page<String> getPaginated(int currentPage);
 
     ProfileDto getProfile(String callsign);
+
+    void addProfile(ProfileDto dto);
 }

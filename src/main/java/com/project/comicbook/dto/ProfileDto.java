@@ -13,4 +13,14 @@ public class ProfileDto {
 
     private String alias;
 
+    private String base;
+
+    private String debutIn;
+
+    private String debutOn;
+
+    private String universe;
+
+    private String official;
+
 }

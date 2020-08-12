@@ -30,8 +30,8 @@ public class DefaultProfileService implements ProfileService {
 
     @Override
     public List<ProfileDto> getAll() {
-        List<ProfileModel> profiles = profileRepository.findAll();
-        return convertModelToDtoMultiple(profiles);
+        List<ProfileModel> models = profileRepository.findAll();
+        return convertModelToDtoMultiple(models);
     }
 
     @Override
@@ -55,12 +55,22 @@ public class DefaultProfileService implements ProfileService {
         return convertModelToDto(profile);
     }
 
-    private ProfileDto convertModelToDto(ProfileModel profileModel) {
-        return modelMapper.map(profileModel,ProfileDto.class);
+    @Override
+    public void addProfile(ProfileDto dto) {
+        profileRepository.save(convertDtoToModel(dto));
     }
 
-    private List<ProfileDto> convertModelToDtoMultiple(List<ProfileModel> profiles) {
-        return profiles.stream().map(this::convertModelToDto).collect(Collectors.toList());
+
+    private ProfileDto convertModelToDto(ProfileModel model) {
+        return modelMapper.map(model, ProfileDto.class);
+    }
+
+    private ProfileModel convertDtoToModel(ProfileDto dto){
+        return modelMapper.map(dto, ProfileModel.class);
+    }
+
+    private List<ProfileDto> convertModelToDtoMultiple(List<ProfileModel> models) {
+        return models.stream().map(this::convertModelToDto).collect(Collectors.toList());
     }
 
 }

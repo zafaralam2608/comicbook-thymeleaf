@@ -6,6 +6,11 @@ create table
             CALLSIGN varchar unique,
             NAME varchar,
             ALIAS varchar,
+            BASE varchar,
+            DEBUT_IN varchar,
+            DEBUT_ON varchar,
+            UNIVERSE varchar,
+            OFFICIAL varchar,
             CREATED date,
             UPDATED date
         );

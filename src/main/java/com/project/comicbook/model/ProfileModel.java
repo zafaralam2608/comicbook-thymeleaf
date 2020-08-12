@@ -8,7 +8,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.Table;
 import java.util.Date;
 
@@ -30,6 +29,21 @@ public class ProfileModel {
 
     @Column(name = "ALIAS")
     private String alias = "";
+
+    @Column(name = "BASE")
+    private String base = "";
+
+    @Column(name = "DEBUT_IN")
+    private String debutIn = "";
+
+    @Column(name = "DEBUT_ON")
+    private String debutOn = "";
+
+    @Column(name = "UNIVERSE")
+    private String universe = "";
+
+    @Column(name = "OFFICIAL")
+    private String official = "";
 
     @CreationTimestamp
     @Column(name = "CREATED")

@@ -17,7 +17,7 @@
                 <a class="caption" th:text="${object}" th:href="@{'/profile/' + ${object}}"/>
             </div>
         </tr>
-        <div class="thumbnail">Enter add button</div>
+        <div class="thumbnail"><a th:href="@{'/profiles/add'}">Add new</a></div>
     </div>
     <div class="pagination" th:if="${objects.totalPages > 0}">
         <tr th:each="pageNumber : ${pages}">
