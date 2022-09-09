@@ -1,19 +1,20 @@
 spring:
-    datasource:
-        url: jdbc:h2:file:C:/workspace/comicbook/database
-        driverClassName: org.h2.Driver
-        name: comicbook
-        password: password
-        username: sa
-        data: classpath:/data-profile.sql,classpath:/data-picture.sql
-    h2:
-        console:
-            enabled: true
-    jpa:
-        database-platform: org.hibernate.dialect.H2Dialect
-        hibernate:
-            ddl-auto: create
+  datasource:
+    url: jdbc:h2:mem:comicbook
+    driverClassName: org.h2.Driver
+    password: sa
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: always    
 server:
-    port: 8080
-    servlet:
-        context-path: /comicbook
+  port: 8080
+  servlet:
+    context-path: /comicbook

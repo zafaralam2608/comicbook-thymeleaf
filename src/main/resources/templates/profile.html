@@ -10,7 +10,7 @@
     <div id="header" th:text="${object.name}"/>
     <div id="content">
         <div id="left-panel">
-            <img id="photo" th:src="@{'../image/' + ${object.callsign}}">
+            <img id="photo" alt="thumb" th:src="@{'../image/' + ${object.callsign}}">
             <table>
                 <tr>
                     <th>Alias</th>

@@ -11,8 +11,19 @@ import java.util.List;
 @Repository
 public interface ProfileRepository extends JpaRepository<ProfileModel, Long> {
 
+    /**
+     * Gets a list of all call sign.
+     *
+     * @return the resources call signs
+     */
     @Query("SELECT callsign FROM ProfileModel ORDER BY id")
     List<String> getAllCallsigns();
 
+    /**
+     * Gets a resource by call sign.
+     *
+     * @param callsign the call sign of resource
+     * @return the resource
+     */
     ProfileModel findByCallsign(String callsign);
 }

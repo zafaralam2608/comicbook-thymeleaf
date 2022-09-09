@@ -8,7 +8,14 @@ import org.springframework.data.repository.query.Param;
 
 public interface PictureRepository  extends JpaRepository<PictureModel, Long> {
 
-    @Query("SELECT image FROM PictureModel WHERE id = (SELECT id FROM ProfileModel WHERE callsign = :callsign)")
+    /**
+     * Gets a resource image by call sign.
+     *
+     * @param callsign the call sign of resource
+     * @return the resource image
+     */
+    @Query("SELECT image FROM PictureModel WHERE "
+            + "id = (SELECT id FROM ProfileModel WHERE callsign = :callsign)")
     byte[] getImageByCallsign(@Param("callsign") String callsign);
 
 }

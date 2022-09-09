@@ -8,8 +8,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @EnableWebMvc
 public class MvcConfig implements WebMvcConfigurer {
+    /**
+     * The method to inject static resources.
+     *
+     * @param registry the registry object
+     */
     @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
+            .addResourceLocations("classpath:/static/");
     }
 }

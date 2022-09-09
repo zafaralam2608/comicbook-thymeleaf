@@ -19,13 +19,17 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 
 @Service
-@RequiredArgsConstructor(onConstructor_ = @Autowired)
-public class DefaultProfileService implements ProfileService {
+@RequiredArgsConstructor
+public final class DefaultProfileService implements ProfileService {
 
+    /** The default size of each page. */
     private static final int DEF_PAGE_SIZE = 13;
 
-    private final ModelMapper modelMapper;
+    /** The dependency for ModelMapper. */
+    @Autowired
+    private ModelMapper modelMapper;
 
+    /** The repository dependency. */
     private final ProfileRepository profileRepository;
 
     @Override
@@ -35,32 +39,35 @@ public class DefaultProfileService implements ProfileService {
     }
 
     @Override
-    public Page<String> getPaginated(int currentPage) {
+    public Page<String> getPaginated(final int currentPage) {
         List<String> callsigns = profileRepository.getAllCallsigns();
         int startIndex = currentPage * DEF_PAGE_SIZE;
         int size = callsigns.size();
         List<String> models;
-        if(size < startIndex)
+        if (size < startIndex) {
             models = Collections.emptyList();
-        else{
+        } else {
             int endIndex = Math.min(startIndex + DEF_PAGE_SIZE, size);
-            models = callsigns.subList(startIndex,endIndex);
+            models = callsigns.subList(startIndex, endIndex);
         }
-        return new PageImpl<>(models, PageRequest.of(currentPage, DEF_PAGE_SIZE), size);
+        return new PageImpl<>(models,
+                PageRequest.of(currentPage, DEF_PAGE_SIZE), size);
     }
 
     @Override
-    public ProfileDto getProfile(String callsign) {
+    public ProfileDto getProfile(final String callsign) {
         ProfileModel profile = profileRepository.findByCallsign(callsign);
         return convertModelToDto(profile);
     }
 
-    private ProfileDto convertModelToDto(ProfileModel profileModel) {
-        return modelMapper.map(profileModel,ProfileDto.class);
+    private ProfileDto convertModelToDto(final ProfileModel profileModel) {
+        return modelMapper.map(profileModel, ProfileDto.class);
     }
 
-    private List<ProfileDto> convertModelToDtoMultiple(List<ProfileModel> profiles) {
-        return profiles.stream().map(this::convertModelToDto).collect(Collectors.toList());
+    private List<ProfileDto> convertModelToDtoMultiple(
+            final List<ProfileModel> profiles) {
+        return profiles.stream().map(this::convertModelToDto)
+                .collect(Collectors.toList());
     }
 
 }

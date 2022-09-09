@@ -14,11 +14,13 @@ import lombok.Data;
 @Data
 public class PictureModel {
 
+    /** The unique id. */
     @Id
     @Column(name = "ID")
     @GeneratedValue
     private Long id;
 
+    /** The image data. */
     @Lob
     @Column(name = "IMAGE")
     private byte[] image;

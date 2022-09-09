@@ -13,7 +13,7 @@
     <div class="album">
         <tr th:each="object : ${objects.content}">
             <div class="thumbnail">
-                <img class="photo" th:src="@{'/image/' + ${object}}"/>
+                <img alt="profile thumb" class="photo" th:src="@{'/image/' + ${object}}"/>
                 <a class="caption" th:text="${object}" th:href="@{'/profile/' + ${object}}"/>
             </div>
         </tr>
