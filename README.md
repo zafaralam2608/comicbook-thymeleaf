@@ -39,4 +39,4 @@ Use this link to view database after launch :
 
 ### User Interface
 Use this link to view UI after launch : 
-[H2 Console](http://localhost:8080/comicbook/profiles)
+[UI](http://localhost:8080/comicbook/profiles)
