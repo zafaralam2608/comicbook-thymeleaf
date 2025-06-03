@@ -1,6 +1,15 @@
 package com.project.comicbook.service;
 
-public interface PictureService {
+import com.project.comicbook.repository.PictureRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public final class PictureService {
+
+    /** The repository dependency. */
+    private final PictureRepository pictureRepository;
 
     /**
     * Gets a resource image by call sign.
@@ -8,5 +17,7 @@ public interface PictureService {
     * @param callsign the call sign of resource
     * @return the resources
     */
-    byte[] getImageByCallsign(String callsign);
+    public byte[] getImageByCallsign(final String callsign) {
+        return pictureRepository.getImageByCallsign(callsign);
+    }
 }

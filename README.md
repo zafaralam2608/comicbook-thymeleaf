@@ -18,7 +18,7 @@ Simple User Interface with CRUD operations for comic book characters
 ## Installation
 
 ### Pre-requisites
-* [JDK 11](https://www.oracle.com/in/java/technologies/javase/jdk11-archive-downloads.html)
+* [JDK 24](https://www.oracle.com/in/java/technologies/java-se-glance.html)
 * [Maven 3](https://maven.apache.org/download.cgi)
 
 ### Launch
